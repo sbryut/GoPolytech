@@ -1,8 +1,14 @@
 package main
 
+import (
+	"fmt"
+	"os"
+)
+
 func findKthLargest(nums []int, k int) int {
 	if len(nums) == 0 || k > len(nums) {
-		return -1
+		fmt.Printf("Error in parameters: length of nums is %d, k is %d\n", len(nums), k)
+		os.Exit(-1)
 	}
 	n := len(nums)
 	for i := n/2 - 1; i >= 0; i-- {
